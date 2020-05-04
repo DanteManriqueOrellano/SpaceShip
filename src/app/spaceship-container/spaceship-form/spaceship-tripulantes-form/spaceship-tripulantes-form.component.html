@@ -1,1 +1,6 @@
-<p>spaceship-tripulantes-form works!</p>
+<fieldset [formGroup]="formGroup">
+    <legend>Tripulantes</legend>
+    <div [formArrayName]="formControlNames.tripulantes" *ngFor="let item of formGroupControls.tripulantes.controls; let i = index">
+        <app-spaceship-tripulante-form></app-spaceship-tripulante-form>
+    </div>
+</fieldset>

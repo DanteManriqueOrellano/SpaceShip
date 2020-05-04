@@ -1,1 +1,9 @@
-<p>spaceship-config-form works!</p>
+<fieldset [formGroup]="formGroup">
+    <legend>Config</legend>
+    Maximum speed
+    <input type="number" [formControlName]="formControlNames.maxSpeed" />
+  
+    Number of canons
+    <input type="number" [formControlName]="formControlNames.nbCanons" />
+</fieldset>
+  
