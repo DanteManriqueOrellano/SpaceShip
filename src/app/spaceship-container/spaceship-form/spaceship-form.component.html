@@ -1,6 +1,8 @@
 <form [formGroup]="formGroup">
 	<fieldset>
-		<legend>Spaceship</legend>
+    <legend>Spaceship</legend>
+    Id <input type="text" [formControlName]="formControlNames.id" />
+
 		Name <input type="text" [formControlName]="formControlNames.name" />
 
     Built in year <input type="number" [formControlName]="formControlNames.builtInYear" />

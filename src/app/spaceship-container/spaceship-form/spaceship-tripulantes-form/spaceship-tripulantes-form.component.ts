@@ -21,7 +21,8 @@ export class SpaceshipTripulantesFormComponent extends NgxSubFormComponent<Tripu
   }
   protected transformToFormGroup(obj:Tripulante[]):tripulantesForm | null {
     return{
-      tripulantes: obj
+      
+      tripulantes: !obj ? [] : obj
     }
 
   }

@@ -13,13 +13,14 @@ export class SpaceshipFormComponent extends NgxRootFormComponent<Spaceship>  {
 
   @DataInput()
   @Input('spaceship')
-  public dataInput: Spaceship | null | undefined;
+  public dataInput: Required<Spaceship>  | null | undefined;
 
   @Output('spaceshipUpdated')
   public dataOutput: EventEmitter<Spaceship> = new EventEmitter();
   
   protected getFormControls():Controls<Spaceship>{
     return {
+      id: new FormControl(),
       name:new FormControl(),
       builtInYear:new FormControl(),
       config:new FormControl(),
