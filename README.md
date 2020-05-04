@@ -1,14 +1,21 @@
-# Prueba
+# Angular con Formulario
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+Este proyecto contiene:
+- lista de colecciones
+- crear nuevas colecciones
+- formulario anidado
+- formulario array
+- actualizacion del formulario
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Apuntes
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Combiene estudiar la estructura de las carpetas para entender el ordenamiento.
+## Prestar atenciones
+Es importante Señalas que los componentes deben de carecer de la implementacion de la interface OnInit, para su correcto funcionamiento.
+recordar siempre que los los componentes que son destinados a formularios deben terminar con "* - form"
+recordar tambien que el compoente formulario principal (la que da inicio al formato typo json), debe extender hacia NgxRoot.
+no olvidar que el componente formulario principal debe a su interior debe envolver @DataInput, de ser el caso tambien implementar los metodos privados toform formform 
 
 ## Build
 
