@@ -43,8 +43,5 @@ export const data:Spaceship = {
     maxSpeed: 8000,
     nbCanons: 20,
   },
-  tripulantes:[
-    {nombre:'uno'},
-    {nombre:'dos'}
-    ]
+  tripulantes:[{nombre:'uno'},{nombre:'dos'}]
 }

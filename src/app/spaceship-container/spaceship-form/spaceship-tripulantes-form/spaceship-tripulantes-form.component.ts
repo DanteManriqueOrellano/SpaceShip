@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxSubFormComponent, Controls } from 'ngx-sub-form';
+import { Component } from '@angular/core';
+import { NgxSubFormComponent, Controls,subformComponentProviders } from 'ngx-sub-form';
 import { Tripulante } from 'src/app/spaceship.service';
-import { FormControl, FormArray } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 
 interface tripulantesForm{
   tripulantes:Tripulante[]
@@ -9,9 +9,10 @@ interface tripulantesForm{
 @Component({
   selector: 'app-spaceship-tripulantes-form',
   templateUrl: './spaceship-tripulantes-form.component.html',
-  styleUrls: ['./spaceship-tripulantes-form.component.css']
+  styleUrls: ['./spaceship-tripulantes-form.component.css'],
+  providers: subformComponentProviders(SpaceshipTripulantesFormComponent)
 })
-export class SpaceshipTripulantesFormComponent extends NgxSubFormComponent<Tripulante[],tripulantesForm> implements OnInit {
+export class SpaceshipTripulantesFormComponent extends NgxSubFormComponent<Tripulante[],tripulantesForm> {
 
   protected getFormControls():Controls<tripulantesForm> {
     return {
@@ -27,9 +28,6 @@ export class SpaceshipTripulantesFormComponent extends NgxSubFormComponent<Tripu
   protected transformFromFormGroup(formValue: tripulantesForm):Tripulante[]{
     return formValue.tripulantes
   }
-  
 
-  ngOnInit(): void {
-  }
 
 }

@@ -9,7 +9,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./spaceship-tripulante-form.component.css'],
   providers: subformComponentProviders(SpaceshipTripulanteFormComponent)
 })
-export class SpaceshipTripulanteFormComponent extends NgxSubFormComponent<Tripulante> implements OnInit {
+export class SpaceshipTripulanteFormComponent extends NgxSubFormComponent<Tripulante>  {
 
   protected getFormControls():Controls<Tripulante>{
     return{
@@ -18,7 +18,6 @@ export class SpaceshipTripulanteFormComponent extends NgxSubFormComponent<Tripul
     }
   }
 
-  ngOnInit(): void {
-  }
+ 
 
 }

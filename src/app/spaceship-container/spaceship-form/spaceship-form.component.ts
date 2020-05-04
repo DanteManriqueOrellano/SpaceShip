@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { subformComponentProviders,Controls, DataInput, NgxRootFormComponent } from "ngx-sub-form";
 import { Spaceship } from 'src/app/spaceship.service';
 import { FormControl } from '@angular/forms';
@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./spaceship-form.component.css'],
   providers: subformComponentProviders(SpaceshipFormComponent),
 })
-export class SpaceshipFormComponent extends NgxRootFormComponent<Spaceship> implements OnInit {
+export class SpaceshipFormComponent extends NgxRootFormComponent<Spaceship>  {
   
 
   @DataInput()
@@ -20,14 +20,13 @@ export class SpaceshipFormComponent extends NgxRootFormComponent<Spaceship> impl
   
   protected getFormControls():Controls<Spaceship>{
     return {
+      name:new FormControl(),
       builtInYear:new FormControl(),
       config:new FormControl(),
-      name:new FormControl(),
       tripulantes: new FormControl(),
     }
   }
 
-  ngOnInit(): void {
-  }
+  
 
 }

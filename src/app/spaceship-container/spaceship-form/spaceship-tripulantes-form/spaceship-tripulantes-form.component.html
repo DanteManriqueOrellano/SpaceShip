@@ -1,6 +1,10 @@
-<fieldset [formGroup]="formGroup">
-    <legend>Tripulantes</legend>
-    <div [formArrayName]="formControlNames.tripulantes" *ngFor="let item of formGroupControls.tripulantes.controls; let i = index">
-        <app-spaceship-tripulante-form></app-spaceship-tripulante-form>
-    </div>
-</fieldset>
+<form [formGroup]="formGroup">
+
+    <fieldset >
+        <legend>Tripulantes</legend>
+        <div [formArrayName]="formControlNames.tripulantes" *ngFor="let unTripulante of formGroupControls.tripulantes.controls; let i = index" >
+            <app-spaceship-tripulante-form [formControl]='unTripulante' ></app-spaceship-tripulante-form>
+        </div>
+        
+    </fieldset>
+</form>

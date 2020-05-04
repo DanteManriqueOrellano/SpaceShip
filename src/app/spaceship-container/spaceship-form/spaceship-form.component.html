@@ -6,12 +6,17 @@
     Built in year <input type="number" [formControlName]="formControlNames.builtInYear" />
     
     <app-spaceship-config-form [formControlName]="formControlNames.config"></app-spaceship-config-form>
-
+   
+    
     <button (click)="manualSave()">Save</button>
+    
     <app-spaceship-tripulantes-form [formControlName]='formControlNames.tripulantes'></app-spaceship-tripulantes-form>
     
+   
     
   </fieldset>
 </form>
 
 <pre>{{ formGroup.value | json }}</pre>
+
+

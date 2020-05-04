@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxSubFormComponent, Controls } from 'ngx-sub-form';
+import { Component } from '@angular/core';
+import { NgxSubFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
 import { SpaceshipConfig } from 'src/app/spaceship.service';
 import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-spaceship-config-form',
   templateUrl: './spaceship-config-form.component.html',
-  styleUrls: ['./spaceship-config-form.component.css']
+  styleUrls: ['./spaceship-config-form.component.css'],
+  providers: subformComponentProviders(SpaceshipConfigFormComponent)
 })
-export class SpaceshipConfigFormComponent extends NgxSubFormComponent<SpaceshipConfig> implements OnInit {
+export class SpaceshipConfigFormComponent extends NgxSubFormComponent<SpaceshipConfig> {
 
  
   protected getFormControls(): Controls<SpaceshipConfig> {
@@ -17,7 +18,6 @@ export class SpaceshipConfigFormComponent extends NgxSubFormComponent<SpaceshipC
       nbCanons: new FormControl(),
     }
   }
-  ngOnInit(): void {
-  }
+  
 
 }
