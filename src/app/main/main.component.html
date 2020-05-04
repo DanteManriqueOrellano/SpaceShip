@@ -1,1 +1,11 @@
-<p>main works!</p>
+<mat-toolbar color="primary">
+    <img src="/assets/ewok-no-bg.png" alt="EWOK" class="logo" />
+  </mat-toolbar>
+  
+  <div class="container">
+    <app-listings  [listings]="listings$ | async"></app-listings>
+  
+    <div class="right-part">
+      <router-outlet class="router-flex"></router-outlet>
+    </div>
+  </div>

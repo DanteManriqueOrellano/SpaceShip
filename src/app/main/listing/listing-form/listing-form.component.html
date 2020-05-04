@@ -1,0 +1,85 @@
+<mat-card>
+   
+    <mat-card-content>
+      <form [formGroup]="formGroup">
+        <mat-form-field>
+          <input
+            matInput
+            data-input-id
+            type="text"
+            placeholder="ID"
+            [formControlName]="formControlNames.id"
+            autocomplete="off"
+          />
+        </mat-form-field>
+  
+        <!-- this is useful to make sure the type of the error is correct -->
+        <!-- as it could be either an object or an array and AoT would notice if not correctly typed -->
+        <mat-error data-input-id-error *ngIf="formGroupErrors?.id?.required">
+          ID is required
+        </mat-error>
+  
+        <mat-form-field>
+          <input
+            matInput
+            data-input-title
+            type="text"
+            placeholder="name"
+            [formControlName]="formControlNames.name"
+            autocomplete="off"
+          />
+        </mat-form-field>
+  
+        <mat-error data-input-title-error *ngIf="formGroupErrors?.name?.required">
+          Title is required
+        </mat-error>
+  
+        
+     
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+     
+      <div *ngIf="true">
+        <!-- @todo -->
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="manualSave()"
+          [disabled]="formGroup.invalid || formGroup.disabled"
+        >
+          Upsert
+        </button>
+  
+        <div *ngIf="formGroup.invalid" class="invalid-form">
+          Form is invalid
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  
+  <mat-card class="errors">
+    <mat-card-title>Form errors</mat-card-title>
+  
+    <mat-card-content>
+      <!--
+        this is an important test as we want to make sure that `formGroupErrors` is null when there's no error
+        if we return an empty object the `*ngIf` condition would be considered valid
+      -->
+      <pre *ngIf="formGroupErrors as errors; else noError" data-errors>{{ errors | json }}</pre>
+  
+      <ng-template #noError>
+        <span data-no-error>
+          Form is valid, no error!
+        </span>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-card class="values">
+    <mat-card-title>Form values</mat-card-title>
+  
+    <mat-card-content>
+      <pre>{{ formGroupValues | json }}</pre>
+    </mat-card-content>
+  </mat-card>

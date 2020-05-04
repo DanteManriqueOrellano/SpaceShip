@@ -1,0 +1,10 @@
+<mat-nav-list>
+    <a data-list- mat-list-item *ngFor="let listing of listings" [routerLink]="['listings', listing.id]">
+      <h4 mat-line>
+        <span data-title>{{ listing.id }}</span>
+        <span data-type>{{ listing.name }}</span>
+      </h4>
+    </a>
+  </mat-nav-list>
+  
+  <a mat-raised-button data-create-new [routerLink]="['listings', 'new']" color="primary">Create new</a>

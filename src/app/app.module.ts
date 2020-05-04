@@ -22,6 +22,9 @@ import { SpaceshipConfigFormComponent } from './spaceship-container/spaceship-fo
 import { SpaceshipTripulantesFormComponent } from './spaceship-container/spaceship-form/spaceship-tripulantes-form/spaceship-tripulantes-form.component';
 import { SpaceshipTripulanteFormComponent } from './spaceship-container/spaceship-form/spaceship-tripulantes-form/spaceship-tripulante-form/spaceship-tripulante-form.component';
 import { MainComponent } from './main/main.component';
+import { ListingComponent } from './main/listing/listing.component';
+import { ListingsComponent } from './main/listings/listings.component';
+import { ListingFormComponent } from './main/listing/listing-form/listing-form.component';
 
 
 
@@ -34,6 +37,9 @@ import { MainComponent } from './main/main.component';
     SpaceshipTripulantesFormComponent,
     SpaceshipTripulanteFormComponent,
     MainComponent,
+    ListingComponent,
+    ListingsComponent,
+    ListingFormComponent,
    
   
  
